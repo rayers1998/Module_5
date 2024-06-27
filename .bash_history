@@ -778,3 +778,21 @@ git add .
 git commit -m "test"
 git push
 git status
+cd..cd..
+cd \
+node -v
+npm -v
+git clone https://github.com/rayers1998/Module_5.git
+git status
+git add .
+git rm --cached Module_5
+-f
+git rm --cached Module-5
+explorer.exe .
+git rm --cached -f Module_5
+git commit -m "Removed Module_5 from index"
+git push origin main
+git pull origin main
+git status
+git checkout main
+git pull origin main --no-rebase
