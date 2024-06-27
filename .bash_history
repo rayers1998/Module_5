@@ -687,3 +687,94 @@ ls
 pwd
 ls
 npm start
+npm start
+cd Rocket_Elevators_Express/
+ls
+npm start
+git add .
+git commit -m 'Completed Module 4'
+npm start
+git status
+git add ../../../.gitignore
+nano ../../../.gitignore
+git add ../../../.gitignore
+git commit -m 'Resolved merge conflicts and completed Module 4'
+git status
+git add READ.md
+git add ../../../local_repo/codebox/RocketElevatorsDigitalPresence
+git add ../../../package-lock.json
+git add ../../../package.json
+git commit -m 'Staged and committed additional changes'
+git status
+git add ../../../local_repo/codebox/RocketElevatorsDigitalPresence
+git commit -m 'Staged and committed additional changes for RocketElevatorsDigitalPresence'
+echo ".bash_history" >> ../../../.gitignore
+git add ../../../.gitignore
+git commit -m 'Updated .gitignore to ignore .bash_history'
+git status
+git clean -n -d
+git clean -f -d
+git status
+rm -rf ../../../.vscode-server/bin/5437499feb04f7a586f677b155b039bc2b3669eb/
+rm -rf ../../../.vscode-server/data/User/globalStorage/vscode.json-language-features/
+rm -rf ../../../.wsl-config
+rm -rf ../../Jeremie\ Folder/
+rm -rf ../../Module_3/.gitignore
+rm -rf ../../Module_3/CBoxx\ Notes/
+rm -rf ../../Module_3/assets/
+rm -rf ../../Module_3/commercial.html
+rm -rf ../../Module_3/fsd_m1.cy.js
+rm -rf ../../Module_3/fsd_m2.cy.js
+rm -rf ../../Module_3/fsd_m3.cy.js
+rm -rf ../../Module_3/index.html
+rm -rf ../../Module_3/quote.html
+rm -rf ../../Module_3/quote.js
+rm -rf ../../Module_3/residential.html
+git status
+echo ".bash_history" >> ../../../.gitignore
+git add ../../../.gitignore
+git commit -m 'Updated .gitignore to ignore .bash_history'
+git add ../../../local_repo/codebox/RocketElevatorsDigitalPresence
+git remote -v
+rm -rf ../../../local_repo/codebox/RocketElevatorsDigitalPresence
+git status
+rm -rf ../../../local_repo/codebox/RocketElevatorsDigitalPresence
+git status
+git add ../../../local_repo/codebox/RocketElevatorsDigitalPresence
+git commit -m 'Deleted RocketElevatorsDigitalPresence directory'
+git status
+git add ../../../local_repo/codebox/RocketElevatorsDigitalPresence
+echo ".bash_history" >> ../../../.gitignore
+git add ../../../.gitignore
+git commit -m 'Updated .gitignore to ignore .bash_history'
+git restore ../../../.bash_history
+echo ".bash_history" >> ../../../.gitignore
+git add ../../../.gitignore
+git commit -m 'Updated .gitignore to ignore .bash_history'
+git restore ../../../.bash_history
+git status
+cd Rocket_Elevators_Express/
+git add -A
+git commit -m 'Completed Module 4. I had problems updating Module 4 dueto untracked Module 3 files that would not commit until conflicts wereresolved. I have committed versions of the Module 3 files in my Module 3 repository and I deleted each untracked Module 3 file.'
+git push origin main
+git status
+ls
+git add .
+git push
+cd Rocket_Elevators_Express/
+ls
+git add .
+git commit -m 'Module 4 COMPLETED'
+git branch
+gclear
+clear
+git branch
+git add .
+git commit -m "test"
+git push
+npm start
+git status
+git add .
+git commit -m "test"
+git push
+git status
