@@ -2,7 +2,11 @@
 require('dotenv').config();
 const Express = require('express');
 const app = Express();
-const port = process.env.PORT || 3004;
+const port = process.env.PORT || 555;
+const MongoManager = require('./src/shared/mongo-manager')
+
+MongoManager.openMongoConnection();
+
 
 // Import routes
 const HealthRoutes = require('./src/routes/health.routes');
