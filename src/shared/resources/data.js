@@ -17,16 +17,19 @@ const agents = [
   {"first_name":"Al","last_name":"Stein","email":"relative@rocket.elv","region":"south","rating":"54","fee":"4000"}
 ];
 
-const unitPrices = {
+export const UNIT_PRICES = {
   standard: 8000,
   premium: 12000,
   excelium: 15000,
 };
 
-const installPercentFees = {
+export const INSTALL_PERCENT_FEES = {
   standard: 10,
   premium: 15,
   excelium: 20,
 };
 
-module.exports = {agents,unitPrices,installPercentFees};
+export const FORMATTER = new Intl.NumberFormat("en-US", { 
+  style: "currency",
+  currency: "USD"
+});
