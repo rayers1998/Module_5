@@ -1,5 +1,7 @@
+//*  src/routes/health.route.js
+
 // Import the necessary controller
-import HEALTH_CONTROLLER from '../features/controllers/health.controller.js';
+import { HEALTH_CONTROLLER } from '../features/controllers/health.controller.js';
 
 // Define a function to set up the health check route endpoints
 const healthRouteEndpoint = (app) => {
@@ -9,4 +11,4 @@ const healthRouteEndpoint = (app) => {
 };
 
 // Export the function to set up health check route endpoints
-export default { healthRouteEndpoint };
+export default healthRouteEndpoint;

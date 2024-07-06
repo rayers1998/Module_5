@@ -1,5 +1,7 @@
+//*  src/routes/login.route.js
+
 // Import the necessary controller
-import LOGIN_CONTROLLER from '../features/controllers/login.controller.js';
+import { LOGIN_CONTROLLER } from '../features/controllers/login.controller.js';
 
 // Define a function to set up the login route endpoints
 const loginRouteEndpoint = (app) => {
@@ -8,4 +10,4 @@ const loginRouteEndpoint = (app) => {
 };
 
 // Export the function to set up login route endpoints
-export default { loginRouteEndpoint };
+export default loginRouteEndpoint;

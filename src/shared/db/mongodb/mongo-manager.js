@@ -1,3 +1,5 @@
+//*  src/shared/db/mongodb/schemas/mongo-manager.js
+
 const mongoose = require('mongoose')
 require('dotenv').config()
 

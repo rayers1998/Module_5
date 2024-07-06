@@ -1,5 +1,7 @@
+//*  src/shared/db/mongodb/schemas/region.Schema.js
+
 // Import the mongoose module
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 // Define the schema for a region
 const regionSchema = new mongoose.Schema({
@@ -12,4 +14,4 @@ const regionSchema = new mongoose.Schema({
 const Region = mongoose.model('Region', regionSchema);
 
 // Export the region model so it can be used in other parts of the application
-module.exports = Region;
+export default Region;

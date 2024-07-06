@@ -1,5 +1,8 @@
+//*  src/shared/db/mongodb/schemas/agent.Schema.js
+
+
 // Import the mongoose module
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 // Define the schema for an agent
 const agentSchema = new mongoose.Schema({
@@ -16,4 +19,4 @@ const agentSchema = new mongoose.Schema({
 const Agent = mongoose.model('Agent', agentSchema);
 
 // Export the agent model so it can be used in other parts of the application
-module.exports = Agent;
+export default Agent;

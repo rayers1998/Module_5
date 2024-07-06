@@ -18,7 +18,4 @@ const logger = (req, res, next) => {
     next();
 };
 
-module.exports = {
-    authenticate,
-    logger
-};
+export default { authenticate, logger };
