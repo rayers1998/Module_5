@@ -1,14 +1,19 @@
-//*  src/routes/health.route.js
-
 // Import the necessary controller
-import { HEALTH_CONTROLLER } from '../features/controllers/health.controller.js';
+const  HEALTH_CONTROLLER = require('../controller/health.controller');
 
-// Define a function to set up the health check route endpoints
+//Function to set up the health check route endpoints
+// @param {Object} app - The Express application instance
+
 const healthRouteEndpoint = (app) => {
-    app.get('/hello', HEALTH_CONTROLLER.helloWorld); // Endpoint to return a "Hello, World!" message. This endpoint doesn't require any authentication.
-    app.get('/status', HEALTH_CONTROLLER.status); // Endpoint to check the status of the application. This endpoint doesn't require any authentication.
-    app.get('/error', HEALTH_CONTROLLER.error); // Endpoint to simulate an error for testing purposes. This endpoint doesn't require any authentication.
+    // Endpoint to return a "Hello, World!" message. This endpoint doesn't require any authentication.
+    app.get('/hello', HEALTH_CONTROLLER.helloWorld);
+    
+    // Endpoint to check the status of the application. This endpoint doesn't require any authentication.
+    app.get('/status', HEALTH_CONTROLLER.status);
+    
+    // Endpoint to simulate an error for testing purposes. This endpoint doesn't require any authentication.
+    app.get('/error', HEALTH_CONTROLLER.error);
 };
 
 // Export the function to set up health check route endpoints
-export default healthRouteEndpoint;
+module.exports = healthRouteEndpoint;
