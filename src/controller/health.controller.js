@@ -1,7 +1,3 @@
-// Import the dotenv package to load environment variables from a .env file
-const dotenv = require('dotenv');
-dotenv.config(); // Load environment variables into process.env
-
 // Load environment variables or use default values if not defined
 const PORT = process.env.PORT || 3004;
 const ENV_NAME = process.env.ENV_NAME || 'local';

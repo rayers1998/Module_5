@@ -15,7 +15,7 @@ const regionRoute = require('../Module_5/src/routes/region.route');
 
 // API function calls
 healthRoute.healthRouteEndpoint(app);
-regionRoute.regionRouteEndpoint(app);
+//regionRoute.regionRouteEndpoint(app);
 
 
 //app.use('/api', regionRoute);

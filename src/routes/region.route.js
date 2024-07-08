@@ -9,8 +9,8 @@ const BASE_MIDDLEWARE = require('../shared/middleware/base-middleware');
 const regionRouteEndpoint = (app) => {
     // Create a new region (requires authentication and JWT verification)
     app.post('/region-create',
-        BASE_MIDDLEWARE.authenticateToken,
-        BASE_MIDDLEWARE.jwtAuthToken,
+        BASE_MIDDLEWARE.auth,
+        //BASE_MIDDLEWARE.jwtAuthToken,
         REGION_CONTROLLER.createRegion
     );
 
@@ -20,4 +20,4 @@ const regionRouteEndpoint = (app) => {
 };
 
 // Export the route setup function
-module.exports = regionRouteEndpoint;
+module.exports = {regionRouteEndpoint};

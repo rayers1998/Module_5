@@ -11,7 +11,7 @@ const dotenv = require('dotenv');
  */
 const openMongoConnection = () => {
     return new Promise((resolve, reject) => {
-        mongoose.connect(process.env.MONG_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+        mongoose.connect(process.env.CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true })
         .then(() => {
             console.log("Connected to MongoDB");
             resolve();
