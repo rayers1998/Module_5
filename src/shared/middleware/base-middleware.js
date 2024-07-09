@@ -1,64 +1,30 @@
 // src\shared\middleware\baseMiddleware.js
 
-
+// Load environment variables from a .env file.
 require('dotenv').config()
 
+// Function to check if the user is allowed to access.
 function auth(req,res, next){
+    // Look for the 'Authorization' information in the request (data sent from the client to the server).
     const authHeader = req.header('Authorization')
+    // Check if the 'Authorization' information matches the secret key in the environment variables.
     if(authHeader != process.env.JWT_SECRET){
+        // If it doesn't match, respond with an error message.
         return res.json({err: 'Access Forbidden'})
     }
+    // If it matches, move on to the next function.
      next()
 }
 
+// Function to print out details about each incoming request (aka logger function).
 function logger(req,res,next){
+        // Show the HTTP method, path, and current date and time in the console (terminal or command prompt).
         console.log(`${req.method}${req.path}" "${new Date()}`)
+    // Move on to the next function.
     next()
 }
-
+// Export the authorization and logger functions so they can be used in other parts of the project.
 module.exports = {auth,logger}
 
 
 
-
-
-//const jwt = require('jsonwebtoken');
-
-// /**
-//  * Middleware to verify JWT tokens included in the authorization header of incoming requests.
-//  * This middleware is used to protect routes that require authentication, ensuring that only
-//  * requests with valid JWT tokens can access them. It verifies the token and, if valid, adds the
-//  * decoded user data to the request object for use in subsequent middleware or route handlers.
-//  * 
-//  * @param {Object} req - The HTTP request object. The middleware expects an authorization header with a Bearer token.
-//  * @param {Object} res - The HTTP response object used to send responses to the client.
-//  * @param {Function} next - The next middleware function in the Express middleware chain.
-//  */
-// const baseMiddleware = (req, res, next) => {
-//   // Check for the presence of the authorization header
-//   if (!req.headers.authorization) {
-//     return res.status(403).json({ error: "Access Forbidden, Authorization header required" });
-//   }
-
-//   // Extract the token from the authorization header
-//   const token = req.headers.authorization.split(' ')[1]; // Expected format: "Bearer YOUR_JWT"
-
-//   // Verify the existence of the token
-//   if (!token) {
-//     return res.status(403).json({ error: "Access Forbidden, token required" });
-//   }
-
-//   try {
-//     // Verify the token using the secret key
-//     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-//     // Attach decoded user data to the request object
-//     req.userData = decoded;
-//     // Proceed to the next middleware
-//     next();
-//   } catch (error) {
-//     // Handle any errors related to token verification
-//     return res.status(401).json({ error: "Auth failed" });
-//   }
-// };
-
-//module.exports = baseMiddleware;

@@ -1,5 +1,6 @@
 // src\shared\resources\data.js
 
+// List of agents with their details.
 const agents = [
   {
     "first_name": "Orlando",
@@ -183,18 +184,21 @@ const agents = [
   }
 ];
 
+// Prices for different unit types.
 const unitPrices = {
   standard: 8000,
   premium: 12000,
   excelium: 15000,
 };
 
+// Installation fees as percentages for different unit types.
 const installPercentFees = {
   standard: 10,
   premium: 15,
   excelium: 20,
 };
 
+// Make the agents, unitPrices, and installPercentFees available for use in other parts of the project.
 module.exports = {
   agents,
   unitPrices,

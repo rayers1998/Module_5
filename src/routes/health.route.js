@@ -1,3 +1,5 @@
+// src\routes\health.route.js
+
 // Import the necessary controller
 const  HealthController = require('../controller/health.controller');
 
