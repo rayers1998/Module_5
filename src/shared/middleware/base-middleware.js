@@ -16,15 +16,9 @@ function auth(req,res, next){
      next()
 }
 
-// Function to print out details about each incoming request (aka logger function).
-function logger(req,res,next){
-        // Show the HTTP method, path, and current date and time in the console (terminal or command prompt).
-        console.log(`${req.method}${req.path}" "${new Date()}`)
-    // Move on to the next function.
-    next()
-}
-// Export the authorization and logger functions so they can be used in other parts of the project.
-module.exports = {auth,logger}
+
+// Export the authorization function.
+module.exports = {auth}
 
 
 
