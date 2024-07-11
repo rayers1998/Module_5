@@ -1,18 +1,22 @@
 // src\controller\agent.controller.js
 
 // Import the AGENT_SCHEMA from the agent.controller file. 
-const AGENT_SCHEMA = require('../controller/agent.controller');
+const AGENT_SCHEMA = require('../schema/agent.Schemas');
 
 // Function to create a new agent in the database
 const createAgent = async (req, res) => {
     try {        
         // Use the information given by the user (like a form they filled out) to create a new agent.
-        // Ensures the new agent starts with a 'sales' count of 0.
-        const agent = await AGENT_SCHEMA.create({ ...req.body, sales: 0 });
+    const { first_name, last_name, email, region } = req.body;
+    const agent = await AGENT_SCHEMA.create({ 
+        first_name, 
+        last_name, 
+        email, 
+        region
+    });
 
         // Log the newly created agent details to the console.
-        // After adding the agent, it prints out the new agent's details so the person running the program can see it.
-        console.log('AGENT:', agent);
+       console.log('AGENT:', agent);
 
         // Send a message back to the user (agent), confirming the agent and details were successfully added.
         res.status(201).json({ msg: 'Agent created', data: agent });
@@ -40,7 +44,7 @@ const getAllAgents = async (req, res) => {
 const getAgentsByRegion = async (req, res) => {
     try {
         // Get the region info from the request and use it to find agents in that area
-        const agents = await AGENT_SCHEMA.find({ region: req.params.region });
+        const agents = await AGENT_SCHEMA.find({ region: req.query.region });
 
         // Send back the list of agents in that region to the person who asked for it.
         res.status(200).json({ data: agents });

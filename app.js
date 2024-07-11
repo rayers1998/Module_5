@@ -1,5 +1,4 @@
 
-
 // IMPORT DEPENDENCIES AND DEFINITIONS
 const dotenv = require('dotenv'); // Load environment variables from a .env file.
 dotenv.config(); // Configure dotenv to use the .env file.
@@ -10,17 +9,18 @@ const port = process.env.PORT || 5555; // Define the port number from the enviro
 // MIDDLEWARE
 app.use(Express.json()); // Use middleware to parse JSON data in incoming requests.
 
-// IMPORT ROUTE 
-const healthRoute = require('../Module_5/src/routes/health.route'); // Import the health route
-const regionRoute = require('../Module_5/src/routes/region.route'); // Import the region route
+// IMPORT ROUTES
+const healthRoute = require('../Module_5/src/routes/health.route');
+const { regionRouteEndpoint } = require('../Module_5/src/routes/region.route'); 
+const { agentRouteEndpoint } = require('../Module_5/src/routes/agent.route'); 
  
 
 // API FUNCTION CALLS
 healthRoute.healthRouteEndpoint(app);  // Set up the health route endpoint
-// regionRoute.regionRouteEndpoint(app); // Set up the region route endpoint (currently commented out)
+regionRouteEndpoint(app); // Set up the region route endpoint
+agentRouteEndpoint(app); // Set up the agent route endpoint
 
 
-//app.use('/api', regionRoute); // Use the region route for all '/api' paths (currently commented out)
 
 // DEFINING THE VARIABLE
 const MongoManager = require('../Module_5/src/shared/db/mongodb/mongo-manager');  // Import the MongoDB connection manager

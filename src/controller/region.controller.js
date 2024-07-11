@@ -22,13 +22,24 @@ const createRegion = async (req, res) => {
             // If the region exists, send a 400 Bad Request response
             return res.status(400).json({ error: 'Region already exists' });
         }
+        // Grab the agent from the corresponding region; these will drive other things.
+        const AGENTS_IN_REGION = await Agent.find ({ region, region});
         
+        // Get the total sales of agents in region.
+        const TOTAL_SALES = AGENTS_IN_REGION.filter ( e => e.sales);
+        
+        // Get what agent is a manager in a region.
+        const MANAGER = AGENTS_IN_REGION.filter ( e => e.posiion === 'manager');
+
+        // Get the top agents in the region.
+        const TOP_AGENTS = AGENTS_IN_REGION.filter(e => e.isTopAgent);
+
         // Create a new region object
         const newRegion = new Region({
             region,
             address,
-            total_sales,
-            manager,
+            TOTAL_SALES,
+            MANAGER,
             top_agents
         });
 
