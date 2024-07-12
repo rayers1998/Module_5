@@ -1,15 +1,55 @@
+// Importing shared data resources
 const Data = require('../../shared/resources/data');
 
-const contactUs = (req,res) => {
-  const firstName = req.body.first_name;
-  const lastName = req.body.last_name;
-  const message = req.body.message;
+// Importing the ContactUs model for interacting with the MongoDB collection
+const ContactUs = require('../../shared/db/mongodb/schemas/contactus.schema'); // Adjust the path as needed
 
-  const responseMessage = `Message received from ${firstName} ${lastName}`;
+/**
+ * Handles contact form submissions.
+ * Extracts form data from the request body, saves it to the MongoDB database, and responds to the client.
+ */
+const contactUs = async (req, res) => {
+  // Destructuring the request body to extract the form fields
+  const {
+    fullname,
+    email,
+    phone,
+    company_name,
+    project_name,
+    project_desc,
+    department,
+    message,
+    file
+  } = req.body;
 
-  console.log(responseMessage);
-  res.send(responseMessage);
+  try {
+    // Creating a new ContactUs document with the extracted form data
+    const newContact = new ContactUs({
+      fullname,
+      email,
+      phone,
+      company_name,
+      project_name,
+      project_desc,
+      department,
+      message,
+      file
+    });
+
+    // Saving the new ContactUs document to the MongoDB database
+    await newContact.save();
+
+    // Sending a success response back to the client indicating the data was saved
+    res.status(200).json({ message: 'Contact information saved successfully!' });
+  } catch (error) {
+    // Sending an error response back to the client if an error occurs during the save operation
+    res.status(500).json({ message: 'An error occurred while saving contact information.', error });
+  }
 };
+
+module.exports = { contactUs };
+
+
 
 const calculateResidentialQuote = (req,res) => {
   // define constants
