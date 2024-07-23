@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -139,3 +140,6 @@ coverage/
 .bash_history
 .bash_history
 .bash_history
+=======
+node_modules/
+>>>>>>> origin/main
