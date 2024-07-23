@@ -1,9 +1,16 @@
-const PublicController = require('../features/public/public.controller');
+// src\routes\public.routes.js
 
+// Importing the PublicController which contains the logic for handling public routes.
+const PublicController = require('../controllers/public.controller');
+const validateContactForm = require('../shared/middleware/validators/contactValidator')
+
+// Function to register public routes with the application.
 const registerPublicRoutes = (app) => {
-  app.post('/contact', PublicController.contactUs);
+  // Route for submitting contact form
+  app.post('/api/contact', validateContactForm, PublicController.contactUs);
 
-  app.get('/calc-residential', PublicController.calculateResidentialQuote);
+  // Route for calculating quotes based on building type (residential, commercial, or industrial)
+   app.get('/calc/:buildingType', PublicController.calculateQuote);
 }
 
-module.exports = {registerPublicRoutes};
+module.exports = { registerPublicRoutes };

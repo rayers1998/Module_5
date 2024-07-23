@@ -1,3 +1,5 @@
+// src/shared/resources/data.js
+
 const agents = [
   {"first_name":"Orlando","last_name":"Perez","email":"perez@rocket.elv","region":"north","rating":"95","fee":"10000"},
   {"first_name":"Brutus","last_name":"Konway","email":"brutus@rocket.elv","region":"north","rating":"92","fee":"9000"},

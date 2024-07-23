@@ -1,4 +1,7 @@
-const AdminController = require('../features/admin/admin.controller');
+// src\routes\admin.routes.js
+
+
+const AdminController = require('../controllers/admin.controller');
 
 const registerAdminRoutes = (app) => {
   app.get('/email-list', AdminController.emailList);

@@ -1,6 +1,6 @@
-const Agent = require('../../shared/db/mongodb/schemas/agent.Schema')
+const Agent = require('../shared/db/mongodb/schemas/agent.Schema')
 const Region = require('../../shared/db/mongodb/schemas/region.Schema')
-const asyncWrapper = require('../../shared/util/base-utils')
+const asyncWrapper = require('../shared/util/base-utils')
 
 
 const createRegion = asyncWrapper( async (req,res) => {
